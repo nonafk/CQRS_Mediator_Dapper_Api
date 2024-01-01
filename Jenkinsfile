@@ -21,7 +21,7 @@ agent {
             steps {
                 echo 'Deploying to IIS Server...'
                 script {
-                    bat "wsl ansible-playbook /mnt/c/POC/deploy-dotnet-test.yml -i /mnt/c/POC/inventory"
+                    bat "wsl ansible-playbook /mnt/c/POC/deploy-dotnet-test.yaml -i /mnt/c/POC/inventory.ini"
                 }
             }
         }

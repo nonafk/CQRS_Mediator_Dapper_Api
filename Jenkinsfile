@@ -13,7 +13,9 @@ agent {
         
         stage('Build') {
             steps {
-                echo 'Build step'
+                script {
+                    bat 'dotnet build CQRS_Mediator_Dapper_Api.sln -c Release'
+                }
             }
         }
         stage('Test') {

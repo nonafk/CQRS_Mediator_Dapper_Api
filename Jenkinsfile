@@ -3,9 +3,9 @@ agent any
 
     stages {
         
-         stage('prepare') {
+         stage('checkout') {
             steps {
-                echo 'prepare build'
+                git 'https://github.com/nonafk/CQRS_Mediator_Dapper_Api.git'
             }
         }
         

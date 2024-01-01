@@ -19,7 +19,10 @@ agent {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploy..'
+                echo 'Deploying to IIS Server...'
+                script {
+                    bat "wsl ansible-playbook /mnt/c/POC/deploy-dotnet-test.yml -i /mnt/c/POC/inventory"
+                }
             }
         }
     }

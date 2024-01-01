@@ -4,18 +4,12 @@ agent {
 }
 
     stages {
-        
-         stage('checkout') {
-            steps {
-                git 'https://github.com/nonafk/CQRS_Mediator_Dapper_Api.git'
-            }
-        }
-        
         stage('Build') {
             steps {
-                script {
-                    bat 'dotnet build CQRS_Mediator_Dapper_Api.sln -c Release'
-                }
+                git 'https://github.com/nonafk/CQRS_Mediator_Dapper_Api.git'
+                bat "dotnet restore CQRS_Mediator_Dapper_Api.csproj"
+                bat "dotnet build"
+                bat "dotnet publish"
             }
         }
         stage('Test') {
